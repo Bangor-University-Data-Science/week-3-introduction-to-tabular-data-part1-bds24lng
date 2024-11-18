@@ -1,15 +1,15 @@
+
 import pandas as pd
 
 def get_numerical_df(df, numerical_features):
-    # filtering DataFrame
-    numerical_df = df[numerical_features].copy()
-    return numerical_df
+    """
+    Creates a DataFrame containing only numerical features.
 
-#test function execution and output
-if __name__ == "__main__":
-    filepath = "data/titanic.csv" 
-    titanic_data = pd.read_csv(filepath)
-    numerical_features = ['Age', 'Fare']
-    numerical_df = get_numerical_df(titanic_data, numerical_features)
+    Args:
+        df (pd.DataFrame): The Titanic dataset as a DataFrame.
+        numerical_features (list): List of numerical feature names.
 
-    print(numerical_df) #to display the numerical DataFrame
+    Returns:
+        pd.DataFrame: DataFrame containing only numerical features.
+    """
+    return df[numerical_features].copy()
