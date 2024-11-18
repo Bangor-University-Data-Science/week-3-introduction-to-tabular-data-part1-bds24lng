@@ -1,19 +1,15 @@
-import pandas as pd
-
 def display_unique_values(df, categorical_features):
+    """
+    Displays unique values for each categorical feature in the DataFrame.
+
+    Args:
+        df (pd.DataFrame): The Titanic dataset as a DataFrame.
+        categorical_features (list): List of categorical feature names.
+
+    Returns:
+        dict: A dictionary where keys are feature names and values are the unique values.
+    """
     unique_values = {}
-    
     for feature in categorical_features:
         unique_values[feature] = df[feature].unique().tolist()
-    
     return unique_values
-
-#function execution test
-if __name__ == "__main__":
-    # Load the Titanic dataset
-    df = pd.read_csv('data/titanic.csv') 
-
-    categorical_features = ['Sex', 'Embarked']  
-    unique_values = display_unique_values(df, categorical_features)
-
-    print(unique_values)  #to display the unique values
